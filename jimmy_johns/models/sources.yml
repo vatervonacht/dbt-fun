@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: jimmy_johns_source
+    database: edw_source
+    tables:
+      - name: customer
+      - name: delivery_address
+      - name: employee
+      - name: district  
