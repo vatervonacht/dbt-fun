@@ -1,8 +1,9 @@
 version: 2
 
 sources:
-  - name: jimmy_johns_source
+  - name: jjsource
     database: edw_source
+    schema: jimmy_johns_source
     tables:
       - name: customer
       - name: delivery_address
