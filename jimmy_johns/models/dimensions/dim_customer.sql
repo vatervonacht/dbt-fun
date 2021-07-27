@@ -7,6 +7,7 @@
     )
 }}
 
+
 select   dbt_jj.nextval                            as CUSTOMER_SK           
        , stg.customer_id                           as CUSTOMER_NUMBER     
        , stg.CUSTOMER_FIRST_NAME                   as CUSTOMER_FIRST_NAME   
@@ -28,6 +29,6 @@ FROM {{ref('stg_customer')}} stg
 
 {% if is_incremental() %}
 
-WHERE stg.row_last_modified_date > (select max(row_last_modified_date) from {{ this }})
+WHERE stg.ROW_LAST_UPDATED > (select max(ROW_LAST_UPDATED) from {{ this }})
 
 {% endif %}
